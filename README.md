@@ -26,6 +26,9 @@ See the final seed file [here](db/seeds.rb).
 
 With just one table in my database, I was able to keep the [model](app/models/news_article.rb) simple. In a more fleshed-out version of this app, I could imagine making authors and publications their own tables so that a user could see all articles from a particular author or publication. But for the purposes of this exercise I stuck with one table and one model, and therefore didn't need any model associations. I added one simple method to the model to format the publication date into "Month Date, Year" for readability.
 
-Similarly, because this is a one-page app, I just needed one [route](config/routes.rb) and one [controller](app/controllers/news_articles_controller.rb) with a simple `index` method to pass the news articles to the front-end view.
+Similarly, because this is a one-page app, I just needed one [route](config/routes.rb) and one [controller](app/controllers/news_articles_controller.rb) with a simple `index` method to pass the news articles to the front-end view. I ended up adding a helper method to split the array of articles into roughly equal sub-arrays to easily create columns on the front-end.
 
 ### Styling the page
+
+To style the page, I used the [Bulma](http://bulma.io/) CSS framework, which is based on Flexbox. This allows for responsiveness and flexibility. I wanted a clean and simple design. Here is what I ended up with:
+![three column news page with blue links](screenshot.png)

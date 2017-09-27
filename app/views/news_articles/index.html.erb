@@ -1,7 +1,22 @@
-<% @articles.each do |article| %>
-  <h4><%= article.publication %> | <%= article.pub_date_readable %></h4>
-  <h1><a href=<%=article.url%> alt="<%= article.headline %>"><%=article.headline%></a></h1>
-  <h2><%= article.subhead %></h2>
-  <h3><%= article.byline.titleize %></h3>
-  <p><%= article.body %></p>
-<% end %>
+<div class="container">
+  <div class="header">
+    <h1 class="title is-1">ODENews</h1>
+  </div>
+  <div class="columns">
+    <% @article_columns.each do |column| %>
+      <div class="column">
+        <% column.each do |article| %>
+          <section class="section">
+            <div class="container">
+              <h4 class="subtitle is-6"><%= article.publication %> | <%= article.pub_date_readable %></h4>
+              <h1 class="title is-5"><a href=<%=article.url%> alt="<%= article.headline %>"><%=article.headline%></a></h1>
+              <h2 class="subtitle is-6"><%= article.subhead %></h2>
+              <h3><%= article.byline.titleize %></h3>
+              <p><%= article.body %></p>
+            </div>
+          </section>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
