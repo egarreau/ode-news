@@ -1,0 +1,6 @@
+<% @articles.each do |article| %>
+  <h1><%= article.headline %></h1>
+  <% article.body_array.each do |paragraph| %>
+    <p><%= paragraph %></p>
+  <% end %>
+<% end %>
