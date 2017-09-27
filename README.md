@@ -31,4 +31,13 @@ Similarly, because this is a one-page app, I just needed one [route](config/rout
 ### Styling the page
 
 To style the page, I used the [Bulma](http://bulma.io/) CSS framework, which is based on Flexbox. This allows for responsiveness and flexibility. I wanted a clean and simple design. Here is what I ended up with:
+
 ![three column news page with blue links](screenshot.png)
+
+### Dumping the database
+
+The SQL data dump can be found [here](news_articles_database.sql).
+
+### Enjoy!
+
+I hope you like ODENews! Please let me know if you have any questions.
