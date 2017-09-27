@@ -1,11 +1,18 @@
+require 'times_wire'
 require 'faker'
 
-5.times do |t|
+TimesWire::Base.api_key = ENV['TIMES_API_KEY']
+
+items = TimesWire::Item.latest('nyt')
+
+items.each do |item|
   NewsArticle.create!(
-    headline: Faker::RuPaul.quote,
-    byline: Faker::Name.name,
-    body: Faker::Lorem.paragraphs(5),
-    pub_date: Faker::Date.backward(50),
-    publication: Faker::Book.publisher
+    headline: item.title,
+    subhead: item.abstract,
+    byline: item.byline,
+    url: item.url,
+    body: Faker::Lorem.paragraph(10),
+    publication: "The New York Times",
+    pub_date: item.published_date
   )
 end

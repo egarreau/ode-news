@@ -28,6 +28,7 @@ end
 
 group :development do
   gem 'faker'
+  gem 'times_wire', '~> 0.9.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 

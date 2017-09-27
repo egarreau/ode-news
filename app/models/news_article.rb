@@ -1,7 +1,5 @@
 class NewsArticle < ApplicationRecord
-  def body_array
-    body.split('"').select do |paragraph|
-      paragraph.include?(".")
-    end
+  def pub_date_readable
+    pub_date.strftime('%B %-d, %Y')
   end
 end
